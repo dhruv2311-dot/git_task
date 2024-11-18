@@ -4,7 +4,6 @@
 1. Install Git from [git-scm.com](https://git-scm.com/).  
 2. Configure your global Git settings:  
    ```bash
-   git config --global user.name "Your Name"
    git config --global user.email "your-email@example.com"
    ```
    -> configration username and email globally
@@ -157,3 +156,98 @@
 
 ---
 
+## **Part 5: Advanced Git**
+
+### Task 12: Stashing Changes
+1. Task 12: Stashing Changes:
+```
+git stash
+```
+-> This command stashes all tracked changes (changes to files that Git is already tracking) and leaves the working directory clean.
+
+2. Apply stashed changes:
+```
+git stash Apply
+```
+-> This applies the most recent stash without removing it from the stash stack.
+
+3. Drop the stash:
+```
+git stash Drop
+```
+-> this command will delete a stash
+
+### Task 13: Tagging Commits
+1. Create and annotate a tag:
+```
+git tag -a v1.0 -m "Version 1.0 release"
+```
+2. Push the tag to the remote:
+```
+git push origin v1.0
+```
+### Task 14: Rewriting Commit History
+1. Use interactive rebase to modify commit messages:
+```
+git rebase -i HEAD~3
+```
+- Replace pick with edit or squash as needed.
+### Task 15: Cherry-Picking Commits
+1. Apply a specific commit to another branch:
+```
+git cherry-pick <commit-hash>
+```
+---
+## **Part 6: Collaboration**
+### Task 16: Forking and Pull Requests
+1. Fork a repository and clone it locally:
+```
+git clone https://github.com/your-username/forked-repo.git
+```
+-> clone repositoryserver to local systum
+
+2. Make changes and push them:
+```
+git checkout -b fix-typo
+echo "Typo fixed" >> README.md
+git commit -m "Fixed a typo"
+git push origin fix-typo
+```
+-> make changes in the cloning repository and commit them to record the chnages ans push all changes local to remote server
+
+3. Open a pull request on GitHub.
+
+### **Task 17: Simulating Team Collaboration**
+1. Simulate a conflict by having two users modify the same file.
+2. Practice resolving the conflict as a team.
+---
+## **Part 7: Ignoring Files**
+### Task 18: Using .gitignore
+1. Create a .gitignore file:
+```
+echo "node_modules/" > .gitignore
+git add .gitignore
+git commit -m "Added .gitignore"
+```
+2. Verify that ignored files are not staged:
+```
+git status
+```
+---
+## **Part 8: Automation and Cleanup**
+### Task 19: Cleaning the Repository
+1. Remove untracked files:
+```
+git clean -f
+```
+### Task 20: Aliases and Shortcuts
+1. Create an alias for frequently used commands:
+```
+git config --global alias.st status
+git config --global alias.cm commit
+```
+2. Use the alias:
+```
+git st
+git cm -m "Message"
+```

@@ -182,4 +182,108 @@ git branch -d feature-login
 ```
 -> delete the branch
 
+---
+## **Part 3: Advanced Git Operations**
+### Task 10: Using Git Stash
+1. Make changes to a file but don’t commit:
+```
+echo "Temporary work" >> temp.md
+```
+-> create a file  with message
 
+2. Stash the changes:
+```
+git stash
+```
+-> This command stashes all tracked changes (changes to files that Git is already tracking) and leaves the working directory clean.
+
+3. View stashed changes:
+```
+git stash list
+```
+-> display all stash changes with a specific message
+
+4. Apply the stashed changes:
+```
+git stash apply
+```
+-> apply all stash changes 
+
+5. Apply the stashed changes:
+```
+git stash drop
+```
+-> command to delete a stash and delete a specific stash apply (" git stash drop stash@{}")
+
+### Task 11: Rewriting History with Interactive Rebase
+1. Create multiple commits:
+```
+echo "Commit 1" > file1.txt && git add file1.txt && git commit -m "Commit 1"
+echo "Commit 2" > file2.txt && git add file2.txt && git commit -m "Commit 2"
+echo "Commit 3" > file3.txt && git add file3.txt && git commit -m "Commit 3"
+```
+-> create a multiple file with a specific message and commit all files to save changes 
+
+2. Squash commits into one:
+```
+git rebase -i HEAD~3
+```
+Example: Replace pick with squash for the second and third commits.
+
+### Task 12: Cherry-Picking Commits
+1. Create a new branch:
+```
+git checkout -b cherry-pick-example
+```
+-> create a new branch
+
+2. herry-pick a specific commit from another branch:
+```
+git cherry-pick <commit-hash>
+```
+### Task 13: Tagging Commits
+1. Tag the current commit:
+```
+git tag -a v1.0 -m "Version 1.0 release"
+```
+2. Push your changes to the remote repository:
+```
+git push origin main
+```
+-> push the changes local to remote server
+
+### Task 15: Forking and Contributing
+1. Fork a repository on GitHub.
+2. Clone the fork locally:
+```
+git clone <forked-repo-url>
+```
+-> clone existing repository into local stystum
+
+3. Create a new branch, make changes, and push:
+```
+git checkout -b fix-typo
+echo "Typo fixed" >> README.md
+git add README.md
+git commit -m "Fixed a typo"
+git push origin fix-typo
+```
+-> create a new branch ans switch on that created  branch and add a text file in folder and staged the file for commit and then record changes with commit and push all changes local to server
+
+4. Open a pull request on GitHub.
+---
+## **Part 4: Additional Practice**
+### Task 16: Simulate Team Collaboration
+1. Create a repository and share it with a friend.
+2. Both make changes to the same file simultaneously.
+3. Practice resolving merge conflicts and pushing changes.
+
+### Task 17: Git Ignore
+1. Create a .gitignore file:
+```
+echo "node_modules/" > .gitignore
+```
+2. Add files and ensure ignored files are not staged:
+```
+git add .
+```
